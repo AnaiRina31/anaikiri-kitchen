@@ -1,0 +1,572 @@
+@charset "utf-8";
+
+body{
+  font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif;
+  margin: 0;
+}
+
+.box1, .boxA, .box2-inner, .box5-inner{
+  padding: 0 10px;
+}
+
+.t-a-justify{
+  text-align: justify; 
+}
+
+/* 全体の横幅を決定 */
+@media screen and (min-width: 1040px){
+  .box1, .box2-inner, .boxA, .box5-inner{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+@media screen and (min-width: 768px){
+  /* 画面幅が768px以上になったときbox3とbox4を横に並べる設定 */
+  /* box3とbox4はboxAでまとめている */
+.boxA::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.box3{
+  float: left;
+  width: 70%;
+  padding-right: 50px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.box4{
+  float: left;
+  width: 30%;
+}
+}
+
+/* サイト名 */
+.site h1{
+  margin: 0;
+  font-size: 50px;
+  text-align: center;
+  font-family: "Nico Moji"; 
+  padding: 10px 0;
+}
+.site h1 a{
+  text-decoration: none;
+  color: #EA5A52;
+}
+
+/* 画面幅が599px以下になったときサイト名のフォントサイズを変更 */
+@media screen and (max-width: 599px) {
+  .site h1{
+    font-size: 40px;
+  }
+}
+
+/* ナビゲーション */
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background-color: #EA5A52;
+}
+.menu li a{
+  display: block;
+  padding: 10px 50px;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+}
+.menu li a:hover{
+  background-color: rgb(247, 133, 127);
+}
+.navbar{
+  display: flex;
+  justify-content: space-around;
+}
+
+@media screen and (max-width:999px) {
+  .menu li a{
+    padding: 10px 3px;
+    font-size: 11px;
+  }
+
+  .menu ul::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  
+  .menu li{
+    float: left;
+    width: auto;
+  }
+
+  
+}
+
+
+/* カテゴリーラベル */
+.kijicat{
+  margin-bottom: 20px;
+}
+
+.kijicat ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.kijicat li a{
+  display: block;
+  margin-right: 5px;
+  padding: 5px 7px;
+  border-radius: 5px;
+  color: rgb(105, 105, 105);
+  background-color: rgb(253, 241, 77);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.kijicat li a:hover{
+  background-color: rgb(255, 247, 129);
+  color: #000;
+}
+
+.kiji ul::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.kijicat li{
+  float: left;
+  width: auto;
+}
+
+@media screen and (max-width: 599px){
+  .kijicat li a{
+    padding: 7px;
+    font-size: 12px;
+  }
+}
+
+
+/* 記事 */
+.kiji h1{
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 30px;
+  
+}
+
+.kiji p{
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.kiji img{
+  max-width: 100%;
+  height: auto;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+
+
+@media screen and (min-width: 768px) {
+  .kiji h1{
+    font-size: 35px;
+  }
+}
+
+/* 記事の投稿日 */
+.kijiinfo{
+  margin-top: -10px;
+  margin-bottom: 20px;
+  color: rgb(122, 122, 122);
+}
+
+.kijiinfo i{
+  margin-right: 7px;
+  color: #aaa;
+  font-size: 20px;
+}
+
+/* 記事の小見出し */
+.kiji h2{
+  margin-top: 0;
+  margin-bottom: 35px;
+  padding-left: 13px;
+  border-left: 13px solid #EA5A52;
+}
+
+.kiji h3 i{
+  margin-right: 7px;
+  color: #EA5A52;
+}
+
+.howtomake{
+  margin-bottom: 60px;
+}
+
+/* シェアボタン */
+.share{
+  margin-top: 40px;
+}
+
+.share ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.share li a{
+  display: block;
+  padding: 10px 5px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.share-tw{
+  background-color: #55acee;
+}
+
+.share-fb{
+  background-color: #3b5998;
+}
+
+.share-gp{
+  background-color: #dd4b39;
+}
+
+.share li a:hover{
+  opacity: 0.8;
+}
+
+.share ul::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.share li {
+  float: left;
+  width: 33.3333%;
+}
+
+.share i{
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 599px){
+  .share span {
+    display: inline-block;
+    text-indent: -9999px;
+  }
+}
+
+/* サイドバー */
+/* 特集記事 */
+.sidemenu ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.sidemenu li a{
+  display: block;
+  padding: 5px;
+  color: #000;
+  font-size: 14px;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.sidemenu li a:hover{
+  background-color: rgb(255, 249, 158);
+  opacity: 0.8;
+}
+
+.sidemenu h1{
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: 2px dotted #ddd;
+  color: #EA5A52;
+  font-size: 18px;
+}
+
+.ninnki i{
+  margin-right: 5px;
+  color: #EA5A52;
+}
+
+.sidemenu img{
+  width: 100%;
+  height: auto;
+  border: none;
+  vertical-align: bottom;
+  border-radius: 10px;
+}
+
+.sidemenu .text{
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border-radius: 0 0 10px 10px;
+}
+
+.sidemenu a{
+  position: relative;
+}
+
+.sidemenu .text{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* 人気記事 */
+.ninnki {
+  margin-bottom: 30px;
+}
+
+.ninnki ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.ninnki li a{
+  display: block;
+  padding: 5px;
+  color: #000;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.ninnki li a:hover{
+  background-color: rgb(255, 249, 158);
+}
+
+.ninnki h1{
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: 2px dotted #ddd;
+  color: #EA5A52;
+  font-size: 18px;
+}
+
+/* オススメ記事 */
+.osusume {
+  margin-bottom: 30px;
+}
+
+.osusume ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.osusume li a{
+  display: block;
+  padding: 5px;
+  color: #000;
+  font-size: 14px;
+  text-decoration: none;
+  border-bottom: dotted 1px #ddd;
+  color: #2288bb;
+}
+
+.osusume li a:hover{
+  background-color: rgb(255, 249, 158);
+}
+
+.osusume li a img{
+  border: none;
+}
+
+.osusume h1{
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: 2px dotted #ddd;
+  color: #EA5A52;
+  font-size: 18px;
+}
+
+.osusume a:after{
+  contain: "";
+  display: block;
+  clear: both;
+}
+
+.osusume img{
+  float: left;
+  width: 60px;
+  border-radius: 50%;
+}
+
+
+
+.osusume .text{
+  float: none;
+  width: auto;
+  margin-left: 60px;
+  padding-left: 15px;
+}
+
+.osusume span{
+  display: block;
+  color: #666;
+  font-size: 12px;
+}
+
+/* コピーらいと */
+.copyright p{
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* box2をバーの形にする */
+.box2{
+  background-color: #EA5A52;
+}
+
+/* box5の上に区切り線を入れる */
+.box5{
+  border-top: 1px solid #ddd;
+  background-color: #EA5A52;
+}
+
+/* box上下の間隔 */
+.box1{
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.box3{
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
+.box4{
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
+.box5{
+  padding-top: 15px;
+  padding-bottom: 40px;
+
+}
+
+@media screen and (max-width: 599px) {
+  .box1{
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .box3{
+    padding-top: 25px;
+  }
+}
+
+/* box4-1とbox4-2を横に並べる */
+@media screen and (max-width: 767px) {
+  .box4::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .box4-1{
+    float: left;
+    width: 50%;
+  }
+  .box4-2{
+    float: left;
+    width: 50%;
+  }
+  .box4-1{
+    padding-right: 20px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .box4-2{
+    padding-left: 20px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+/* 関連記事 */
+.kanren{
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f0f0d4;
+}
+
+.kanren h1{
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #727224;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.kanren ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.kanren li a{
+  display: block;
+  padding: 5px;
+  color: #000;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.kanren li a:hover{
+  text-decoration: underline;
+}
+
+.kanren ul::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.kanren li{
+  float: left;
+  width: 25%;
+}
+
+.kanren img{
+  max-width: 100%;
+  height: auto;
+  border: none;
+}
+
+@media screen and (max-width: 599px){
+  .kanren {
+    padding: 10px;
+  }
+
+  .kanren li{
+    width: 50%;
+  }
+  .kanren li:nth-child(3){
+    clear: both;
+  }
+}
